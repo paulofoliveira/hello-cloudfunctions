@@ -348,3 +348,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Ignore json files on Properties folder from MyFunc01:
+/src/MyFunc01/Properties/*.json
