@@ -1,0 +1,20 @@
+name: Deploy MyFunc01
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/MyFunc01/**'
+      
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: paulofoliveira/hello-cloudfunctions/.github/workflows/deploy-base.yml@main
+    with:
+      function_name: myfunc01
+      runtime: dotnet6
+      entrypoint: MyFunc01.Function
+      source_dir: src/MyFunc01
+    secrets:
+      GCP_SERVICE_ACCOUNT_KEY: ${{secrets.GCP_SERVICE_ACCOUNT_KEY}}
