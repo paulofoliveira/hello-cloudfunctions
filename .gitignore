@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Ignore json files on Properties folder from MyFunc01:
 /src/MyFunc01/Properties/*.json
+
+# Ignore local Env Variables from MyFunc01:
+/src/MyFunc01/.env.yml
