@@ -18,3 +18,4 @@ jobs:
       source_dir: src/MyFunc01
     secrets:
       GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+      GCP_ENV_VARS: ${{ secrets.GCP_ENV_VARS }}
