@@ -20,6 +20,9 @@ on:
       region:
         type: string
         default: 'southamerica-east1'
+      env_vars:
+        type: string
+        default: ''
 
 jobs:
   build:
@@ -45,3 +48,4 @@ jobs:
         region: '${{inputs.region}}'
         entry_point: '${{inputs.entrypoint}}'
         source_dir: '${{inputs.source_dir}}'
+        env_vars: '${{inputs.env_vars}}'
