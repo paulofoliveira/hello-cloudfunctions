@@ -4,6 +4,8 @@ on:
     secrets:
       GCP_SERVICE_ACCOUNT_KEY:
         required: true
+      GCP_ENV_VARS:
+        required: true
     inputs:
       function_name:
         required: true
