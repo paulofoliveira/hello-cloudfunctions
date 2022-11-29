@@ -20,10 +20,6 @@ on:
       region:
         type: string
         default: 'southamerica-east1'
-      env_vars:
-        type: string
-        default: ''
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,9 +39,9 @@ jobs:
       name: 'Deploy Cloud Function'
       uses: 'google-github-actions/deploy-cloud-functions@v1'
       with:
-        name: '${{inputs.function_name}}'
-        runtime: '${{inputs.runtime}}'
-        region: '${{inputs.region}}'
-        entry_point: '${{inputs.entrypoint}}'
-        source_dir: '${{inputs.source_dir}}'
-        env_vars: '${{inputs.env_vars}}'
+        name: '${{ inputs.function_name }}'
+        runtime: '${{ inputs.runtime }}'
+        region: '${{ inputs.region }}'
+        entry_point: '${{ inputs.entrypoint }}'
+        source_dir: '${{ inputs.source_dir }}'
+        env_vars: '${{ secrets.GCP_ENV_VARS }}'
