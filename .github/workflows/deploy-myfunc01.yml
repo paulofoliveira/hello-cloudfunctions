@@ -16,3 +16,5 @@ jobs:
       runtime: dotnet6
       entrypoint: MyFunc01.Function
       source_dir: src/MyFunc01
+    secrets:
+      GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
