@@ -23,10 +23,10 @@ on:
         type: string
         default: 'southamerica-east1'
 jobs:
-  build:
+  setup-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - id: Checkout
+    - id: 'checkout'
       uses: actions/checkout@v3
 
     - id: 'auth'
@@ -37,7 +37,7 @@ jobs:
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
     
-    - id: 'deploy'
+    - id: 'deploy-function'
       name: 'Deploy Cloud Function'
       uses: 'google-github-actions/deploy-cloud-functions@v1'
       with:
