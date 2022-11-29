@@ -16,6 +16,6 @@ jobs:
       runtime: dotnet6
       entrypoint: MyFunc01.Function
       source_dir: src/MyFunc01
-      env_vars: 'VALIDATION_TOKEN=${{secrets.VALIDATION_TOKEN}},CONNECTION_STRING=${{secrets.CONNECTION_STRING}}'
     secrets:
       GCP_SERVICE_ACCOUNT_KEY: ${{secrets.GCP_SERVICE_ACCOUNT_KEY}}
+      GCP_ENV_VARS: ${{secrets.GCP_ENV_VARS}}
