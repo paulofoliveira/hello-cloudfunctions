@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  setup-and-deploy:
     uses: paulofoliveira/hello-cloudfunctions/.github/workflows/deploy-base.yml@main
     with:
       function_name: myfunc01
