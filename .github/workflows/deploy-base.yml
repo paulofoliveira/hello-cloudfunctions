@@ -17,30 +17,35 @@ on:
       source_dir:
         required: true
         type: string
-      region:      
+      region:
         type: string
         default: 'southamerica-east1'
+      env_vars:
+        type: string
+        default: ''
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - id: Checkout
+      uses: actions/checkout@v3
 
     - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
+      uses: 'google-github-actions/auth@v1'
       with:
         credentials_json: '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}'
 
     - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v0'
+      uses: 'google-github-actions/setup-gcloud@v1'
     
     - id: 'deploy'
       name: 'Deploy Cloud Function'
-      uses: 'google-github-actions/deploy-cloud-functions@v0'
+      uses: 'google-github-actions/deploy-cloud-functions@v1'
       with:
         name: '${{inputs.function_name}}'
         runtime: '${{inputs.runtime}}'
-        region: ${{inputs.region}}
-        entry_point: ${{inputs.entrypoint}}
+        region: '${{inputs.region}}'
+        entry_point: '${{inputs.entrypoint}}'
         source_dir: '${{inputs.source_dir}}'
+        env_vars: '${{inputs.env_vars}}'
