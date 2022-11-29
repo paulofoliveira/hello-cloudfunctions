@@ -23,7 +23,7 @@ on:
         type: string
         default: 'southamerica-east1'
 jobs:
-  setup-and-deploy:
+  process:
     runs-on: ubuntu-latest
     steps:
     - id: 'checkout'
