@@ -22,8 +22,7 @@ on:
       region:
         type: string
         default: 'southamerica-east1'
-      allow_unauthenticated:
-        required: true
+      allow_unauthenticated:      
         type: boolean
         default: false
 jobs:
