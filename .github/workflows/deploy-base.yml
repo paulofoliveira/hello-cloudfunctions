@@ -51,3 +51,9 @@ jobs:
         entry_point: '${{ inputs.entrypoint }}'
         source_dir: '${{ inputs.source_dir }}'
         env_vars: '${{ secrets.GCP_ENV_VARS }}'
+        
+    - name: 'Allow Unauthenticated Requests'
+      if: inputs.allow_unauthenticated == 'true'
+      run: |
+        gcloud functions add-iam-policy-binding ${{inputs.function_name}} --member="allUsers" --role="roles/cloudfunctions.invoker" --region=${{inputs.region}}
+    
