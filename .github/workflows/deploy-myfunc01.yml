@@ -19,4 +19,4 @@ jobs:
       allow_unauthenticated: true
     secrets:
       GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-      GCP_ENV_VARS: ${{ secrets.GCP_ENV_VARS }}
+      GCP_ENV_VARS: "VALIDATION_TOKEN=${{ secrets.VALIDATION_TOKEN }},CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}"
