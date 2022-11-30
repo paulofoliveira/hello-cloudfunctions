@@ -16,6 +16,7 @@ jobs:
       runtime: dotnet6
       entrypoint: MyFunc01.Function
       source_dir: src/MyFunc01
+      allow_unauthenticated: true
     secrets:
       GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
       GCP_ENV_VARS: ${{ secrets.GCP_ENV_VARS }}
