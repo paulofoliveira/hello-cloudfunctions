@@ -22,7 +22,7 @@ on:
       region:
         type: string
         default: 'southamerica-east1'
-      allow_unauthenticated:      
+      allow_unauthenticated:
         type: boolean
         default: false
 jobs:
@@ -55,4 +55,3 @@ jobs:
       if: inputs.allow_unauthenticated == true
       run: |
         gcloud functions add-iam-policy-binding ${{inputs.function_name}} --member="allUsers" --role="roles/cloudfunctions.invoker" --region=${{inputs.region}}
-    
