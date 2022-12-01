@@ -19,4 +19,4 @@ jobs:
       allow_unauthenticated: true
     secrets:
       GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-      GCP_ENV_VARS: 'VALIDATION_TOKEN=${{ secrets.SL_FUNC_VALIDATION_TOKEN }},DB_HOST=${{ secrets.DB01_HOST }},DB_HOST=${{ secrets.PORT }},DB_NAME=${{ secrets.SL_FUNC_DB_NAME }},DB_USER=${{ secrets.SL_FUNC_DB_USER }},DB_PASSWD=${{ secrets.SL_FUNC_DB_PASSWD }}'
+      GCP_ENV_VARS: 'VALIDATION_TOKEN=${{ secrets.SL_FUNC_VALIDATION_TOKEN }},DB_HOST=${{ secrets.DB01_HOST }},DB_PORT=${{ secrets.DB01_PORT }},DB_NAME=${{ secrets.SL_FUNC_DB_NAME }},DB_USER=${{ secrets.SL_FUNC_DB_USER }},DB_PASSWD=${{ secrets.SL_FUNC_DB_PASSWD }}'
